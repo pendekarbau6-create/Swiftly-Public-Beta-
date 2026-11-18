@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'self'; style-src 'self' 'unsafe-inline'; img-src 'self' https: data:; font-src 'self'; connect-src 'self';">
+  <title>Search — Swiftly</title>
+  <link rel="stylesheet" href="assets/pages.css">
+</head>
+<body>
+  <div class="page search-page">
+    <header class="search-header">
+      <button class="search-brand" id="home" type="button" aria-label="Go to Swiftly home">
+        <img src="assets/logo.jpg" alt="">
+        <span>Swiftly</span>
+      </button>
+      <span class="search-header-label">Search</span>
+    </header>
+
+    <main class="search-content">
+      <form class="search-bar" id="search-form" role="search">
+        <svg viewBox="0 0 16 16" aria-hidden="true"><circle cx="7" cy="7" r="4.5"/><path d="M10.5 10.5L14 14"/></svg>
+        <input class="input grow" id="q" type="text" placeholder="Search the web" autocomplete="off" spellcheck="false" aria-label="Search query">
+        <button class="search-clear" id="clear-query" type="button" aria-label="Clear search" title="Clear search">
+          <svg viewBox="0 0 16 16" aria-hidden="true"><path d="m4 4 8 8M12 4l-8 8"/></svg>
+        </button>
+        <button class="button primary" id="go" type="submit" aria-label="Search">
+          <svg viewBox="0 0 16 16" aria-hidden="true"><circle cx="7" cy="7" r="4.5"/><path d="M10.5 10.5L14 14"/></svg>
+          <span>Search</span>
+        </button>
+      </form>
+
+      <div class="search-summary">
+        <div class="search-summary-heading">
+          <span class="search-eyebrow">WEB RESULTS</span>
+          <h1 id="result-heading">Search results</h1>
+        </div>
+        <div id="meta" class="search-meta" role="status" aria-live="polite">
+          <span class="search-spinner" aria-hidden="true"></span>
+          <span>Searching the web…</span>
+        </div>
+      </div>
+
+      <div class="search-columns">
+        <section class="search-main" aria-label="Search results">
+          <div id="answers"></div>
+          <div id="results" aria-live="polite" aria-busy="true"></div>
+        </section>
+      </div>
+    </main>
+  </div>
+
+  <script src="assets/common.js"></script>
+  <script src="assets/search.js"></script>
+</body>
+</html>

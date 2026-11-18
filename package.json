@@ -1,0 +1,29 @@
+{
+  "name": "swiftly",
+  "version": "1.0.0",
+  "description": "Swiftly — a fast, privacy-minded desktop browser with its own search engine",
+  "main": "src/main/main.js",
+  "private": true,
+  "scripts": {
+    "start": "electron .",
+    "dev": "electron . --dev",
+    "search": "node src/search/standalone.js",
+    "test": "node --test test"
+  },
+  "keywords": [
+    "browser",
+    "electron",
+    "search",
+    "privacy"
+  ],
+  "license": "MIT",
+  "devDependencies": {
+    "electron": "^32.2.0"
+  },
+  "dependencies": {
+    "sql.js": "^1.16.0"
+  },
+  "allowScripts": {
+    "electron@32.3.3": true
+  }
+}

@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'self'; style-src 'self' 'unsafe-inline'; img-src 'self' https: data:; font-src 'self'; connect-src 'self';">
+  <title>Settings — Swiftly</title>
+  <link rel="stylesheet" href="assets/pages.css">
+</head>
+<body>
+  <div class="page">
+    <div class="page-header">
+      <div>
+        <h1 class="page-title">Settings</h1>
+        <p class="page-subtitle">Preferences for Swiftly</p>
+      </div>
+      <div class="toolbar-row">
+        <button class="button danger" id="reset-prefs" type="button">Restore defaults</button>
+      </div>
+    </div>
+
+    <section class="section" style="margin-top:0;">
+      <h2 class="section-title">Appearance</h2>
+      <div class="list">
+        <div class="setting">
+          <div>
+            <div class="setting-label">Theme</div>
+            <div class="setting-help">Light, dark, or follow the system</div>
+          </div>
+          <div class="setting-control">
+            <select class="select" id="theme">
+              <option value="system">System</option>
+              <option value="light">Light</option>
+              <option value="dark">Dark</option>
+            </select>
+          </div>
+        </div>
+        <div class="setting">
+          <div>
+            <div class="setting-label">Bookmarks bar</div>
+            <div class="setting-help">Show saved bookmarks under the address bar</div>
+          </div>
+          <div class="setting-control">
+            <button class="switch" id="showBookmarkBar" role="switch" aria-checked="false"></button>
+          </div>
+        </div>
+        <div class="setting">
+          <div>
+            <div class="setting-label">Compact tabs</div>
+            <div class="setting-help">Fit more tabs in the strip by making them narrower</div>
+          </div>
+          <div class="setting-control">
+            <button class="switch" id="compactTabs" role="switch" aria-checked="false"></button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <h2 class="section-title">Search</h2>
+      <div class="list">
+        <div class="setting">
+          <div>
+            <div class="setting-label">Search engine</div>
+            <div class="setting-help">Swiftly Search blends several sources; or pick one provider directly</div>
+          </div>
+          <div class="setting-control">
+            <select class="select" id="searchEngine"></select>
+          </div>
+        </div>
+        <div class="setting">
+          <div>
+            <div class="setting-label">Safe search</div>
+            <div class="setting-help">Filter explicit results from the search engine</div>
+          </div>
+          <div class="setting-control">
+            <select class="select" id="safeSearch">
+              <option value="off">Off</option>
+              <option value="moderate">Moderate</option>
+              <option value="strict">Strict</option>
+            </select>
+          </div>
+        </div>
+        <div class="setting">
+          <div>
+            <div class="setting-label">Results per search</div>
+            <div class="setting-help">How many web results to collect</div>
+          </div>
+          <div class="setting-control">
+            <select class="select" id="resultsPerPage">
+              <option value="5">5</option>
+              <option value="10">10</option>
+              <option value="20">20</option>
+              <option value="30">30</option>
+              <option value="50">50</option>
+            </select>
+          </div>
+        </div>
+        <div class="setting">
+          <div>
+            <div class="setting-label">Suggestions</div>
+            <div class="setting-help">Show completions while you type in the address bar</div>
+          </div>
+          <div class="setting-control">
+            <button class="switch" id="showSuggestions" role="switch" aria-checked="true"></button>
+          </div>
+        </div>
+        <div class="setting">
+          <div>
+            <div class="setting-label">Region</div>
+            <div class="setting-help">Used to localise results</div>
+          </div>
+          <div class="setting-control">
+            <select class="select" id="region">
+              <option value="en-US">United States</option>
+              <option value="en-GB">United Kingdom</option>
+              <option value="en-CA">Canada</option>
+              <option value="en-AU">Australia</option>
+              <option value="en-IN">India</option>
+              <option value="de-DE">Germany</option>
+              <option value="fr-FR">France</option>
+              <option value="es-ES">Spain</option>
+              <option value="it-IT">Italy</option>
+              <option value="nl-NL">Netherlands</option>
+              <option value="pt-BR">Brazil</option>
+              <option value="ja-JP">Japan</option>
+              <option value="ko-KR">South Korea</option>
+              <option value="zh-CN">China</option>
+            </select>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <h2 class="section-title">Browsing</h2>
+      <div class="list">
+        <div class="setting">
+          <div>
+            <div class="setting-label">Home page</div>
+            <div class="setting-help">Where new tabs and the Home button go</div>
+          </div>
+          <div class="setting-control">
+            <input class="input" id="homepage" type="text" spellcheck="false" placeholder="swifty://start">
+            <button class="button" id="homepage-use-start" type="button">Start page</button>
+          </div>
+        </div>
+        <div class="setting">
+          <div>
+            <div class="setting-label">Restore last session</div>
+            <div class="setting-help">Reopen tabs from your previous session on launch</div>
+          </div>
+          <div class="setting-control">
+            <button class="switch" id="restoreLastSession" role="switch" aria-checked="true"></button>
+          </div>
+        </div>
+        <div class="setting">
+          <div>
+            <div class="setting-label">Open results in a new tab</div>
+            <div class="setting-help">Search results and top sites open beside the current page</div>
+          </div>
+          <div class="setting-control">
+            <button class="switch" id="openInNewTab" role="switch" aria-checked="false"></button>
+          </div>
+        </div>
+        <div class="setting">
+          <div>
+            <div class="setting-label">Always show the full URL</div>
+            <div class="setting-help">Skip the shortened address and show the scheme and path</div>
+          </div>
+          <div class="setting-control">
+            <button class="switch" id="alwaysShowFullUrl" role="switch" aria-checked="false"></button>
+          </div>
+        </div>
+        <div class="setting">
+          <div>
+            <div class="setting-label">Smooth scrolling</div>
+            <div class="setting-help">Animate page scrolling</div>
+          </div>
+          <div class="setting-control">
+            <button class="switch" id="smoothScrolling" role="switch" aria-checked="true"></button>
+          </div>
+        </div>
+        <div class="setting">
+          <div>
+            <div class="setting-label">Tab hibernation</div>
+            <div class="setting-help">Unload background pages after 10 minutes to free memory; selecting a tab reloads it</div>
+          </div>
+          <div class="setting-control">
+            <button class="switch" id="hibernateTabs" role="switch" aria-checked="false"></button>
+          </div>
+        </div>
+        <div class="setting">
+          <div>
+            <div class="setting-label">Check spelling as you type</div>
+            <div class="setting-help">Underline misspelled words in text fields</div>
+          </div>
+          <div class="setting-control">
+            <button class="switch" id="spellcheck" role="switch" aria-checked="true"></button>
+          </div>
+        </div>
+        <div class="setting">
+          <div>
+            <div class="setting-label">Page zoom</div>
+            <div class="setting-help">Scales every page — Ctrl +, Ctrl − and Ctrl 0 also work</div>
+          </div>
+          <div class="setting-control">
+            <input class="range" id="zoomLevel" type="range" min="-3" max="3" step="0.5" value="0">
+            <span class="mono" id="zoom-value">100%</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <h2 class="section-title">Downloads</h2>
+      <div class="list">
+        <div class="setting">
+          <div>
+            <div class="setting-label">Download folder</div>
+            <div class="setting-help">Leave empty to use the system Downloads folder</div>
+          </div>
+          <div class="setting-control">
+            <input class="input" id="downloadDirectory" type="text" spellcheck="false" placeholder="System default">
+            <button class="button" id="choose-download" type="button">Choose…</button>
+          </div>
+        </div>
+        <div class="setting">
+          <div>
+            <div class="setting-label">Ask where to save each file</div>
+            <div class="setting-help">Show a save dialog for every download</div>
+          </div>
+          <div class="setting-control">
+            <button class="switch" id="askWhereToSave" role="switch" aria-checked="false"></button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <h2 class="section-title">Search engine status</h2>
+      <div class="list" id="providers"></div>
+      <div class="toolbar-row" style="margin-top:12px;">
+        <button class="button" id="reset-session" type="button">Reset search session</button>
+      </div>
+    </section>
+
+    <section class="section">
+      <h2 class="section-title">Privacy</h2>
+      <div class="list">
+        <div class="setting">
+          <div>
+            <div class="setting-label">Send “Do Not Track”</div>
+            <div class="setting-help">Ask sites not to track you across the web</div>
+          </div>
+          <div class="setting-control">
+            <button class="switch" id="sendDoNotTrack" role="switch" aria-checked="true"></button>
+          </div>
+        </div>
+        <div class="setting">
+          <div>
+            <div class="setting-label">Block third-party cookies</div>
+            <div class="setting-help">Strip cookies from cross-site requests</div>
+          </div>
+          <div class="setting-control">
+            <button class="switch" id="blockThirdPartyCookies" role="switch" aria-checked="false"></button>
+          </div>
+        </div>
+        <div class="setting">
+          <div>
+            <div class="setting-label">Privacy Shield</div>
+            <div class="setting-help">Block known ad and tracker requests with Swiftly’s built-in network filter</div>
+          </div>
+          <div class="setting-control">
+            <button class="switch" id="blockAdsAndTrackers" role="switch" aria-checked="true"></button>
+          </div>
+        </div>
+        <div class="setting">
+          <div>
+            <div class="setting-label">Native Shield (HTTPS-only)</div>
+            <div class="setting-help">Upgrade HTTP requests to HTTPS when the destination supports it</div>
+          </div>
+          <div class="setting-control">
+            <button class="switch" id="httpsOnly" role="switch" aria-checked="false"></button>
+          </div>
+        </div>
+        <div class="setting">
+          <div>
+            <div class="setting-label">Clear browsing data on exit</div>
+            <div class="setting-help">Erase history, downloads, cookies and cache when Swiftly closes</div>
+          </div>
+          <div class="setting-control">
+            <button class="switch" id="clearOnExit" role="switch" aria-checked="false"></button>
+          </div>
+        </div>
+        <div class="setting">
+          <div>
+            <div class="setting-label">Browsing history</div>
+            <div class="setting-help">Saved on this computer. Incognito windows are excluded.</div>
+          </div>
+          <div class="setting-control">
+            <button class="button" id="view-history" type="button">View history</button>
+            <button class="button danger" id="clear-history" type="button">Clear now</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <h2 class="section-title">Swiftly account</h2>
+      <div class="list">
+        <div class="setting">
+          <div>
+            <div class="setting-label" id="account-status">No profile signed in</div>
+            <div class="setting-help">Profiles are stored on this computer and don’t sync to other devices</div>
+          </div>
+          <div class="setting-control">
+            <button class="button" id="manage-account" type="button">Manage account</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <h2 class="section-title">Store</h2>
+      <div class="list">
+        <div class="setting">
+          <div>
+            <div class="setting-label">Themes &amp; extensions</div>
+            <div class="setting-help">Browse and buy themes, install extensions</div>
+          </div>
+          <div class="setting-control">
+            <button class="button" id="open-store" type="button">Open store</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <h2 class="section-title">About</h2>
+      <div class="list">
+        <div class="status-row"><span class="status-dot ok"></span><span id="about">Swiftly</span></div>
+      </div>
+    </section>
+
+    <section class="section">
+      <h2 class="section-title">Performance</h2>
+      <div class="list">
+        <div class="setting">
+          <div>
+            <div class="setting-label">Sub-50ms Paint</div>
+            <div class="setting-help">The start page defers offscreen sections; this reports settings’ First Contentful Paint against a 50 ms target</div>
+          </div>
+          <div class="setting-control">
+            <span class="mono" id="paint-status">Measuring…</span>
+          </div>
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <script src="assets/common.js"></script>
+  <script src="assets/settings.js"></script>
+</body>
+</html>

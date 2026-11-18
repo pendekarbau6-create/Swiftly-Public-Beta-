@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'self'; style-src 'self' 'unsafe-inline'; img-src 'self' https: data:; font-src 'self'; connect-src 'self';">
+  <title>Swiftly</title>
+  <link rel="stylesheet" href="assets/pages.css">
+</head>
+<body>
+  <div class="page">
+    <div class="start-topbar">
+      <button class="account-link" id="account-link" type="button">
+        <span class="account-link-avatar" id="account-avatar" hidden></span>
+        <span id="account-label">Sign in</span>
+      </button>
+    </div>
+
+    <section class="hero">
+      <div class="brand">
+        <img src="assets/hero-logo.png" alt="Swiftly" class="brand-logo-main">
+      </div>
+
+      <form class="hero-search" id="search-form">
+        <svg viewBox="0 0 16 16" aria-hidden="true"><circle cx="7" cy="7" r="4.5"/><path d="M10.5 10.5L14 14"/></svg>
+        <input id="q" type="text" placeholder="Search the web or enter an address" autocomplete="off" spellcheck="false" aria-label="Search">
+        <button type="submit">Search</button>
+      </form>
+    </section>
+
+    <div class="engagement-dashboard">
+      <!-- Daily Streak Section -->
+      <div class="streak-card">
+        <div class="streak-header">
+          <svg viewBox="0 0 16 16" class="streak-icon"><path d="M8.5 2v5.5a3.5 3.5 0 0 1-7 0V2h7zm-6 6.5a2 2 0 0 1 4 0V14H2.5v-5.5zm7.5 0a2 2 0 0 1 4 0V14h-4v-5.5z"/></svg>
+          <div class="streak-info">
+            <span class="streak-count" id="streak-count">0</span>
+            <span class="streak-label">Day Streak</span>
+          </div>
+        </div>
+        <p class="streak-subtitle">Keep searching daily to build your streak!</p>
+      </div>
+
+      <!-- Searches Earned Section -->
+      <div class="searches-card">
+        <div class="searches-header">
+          <svg viewBox="0 0 16 16" class="searches-icon"><path d="M8 1a7 7 0 1 0 0 14A7 7 0 0 0 8 1zm0 12a5 5 0 1 1 0-10 5 5 0 0 1 0 10zm0-8a1 1 0 1 0 0 2 1 1 0 0 0 0-2zm0 4a1 1 0 1 0 0 2 1 1 0 0 0 0-2z"/></svg>
+          <div class="searches-info">
+            <span class="searches-count" id="searches-count">0</span>
+            <span class="searches-label">Searches Earned</span>
+          </div>
+        </div>
+        <p class="searches-subtitle">Earn 1 search for each search</p>
+      </div>
+
+      <!-- Focus Mode Section -->
+      <div class="focus-card">
+        <div class="focus-header">
+          <svg viewBox="0 0 16 16" class="focus-icon"><path d="M8 2a6 6 0 1 0 0 12A6 6 0 0 0 8 2zm0 10a4 4 0 1 1 0-8 4 4 0 0 1 0 8zm-2-3h4v1h-4v-1z"/></svg>
+          <div class="focus-info">
+            <span class="focus-minutes" id="focus-minutes">0</span>
+            <span class="focus-label">Focus Minutes</span>
+          </div>
+        </div>
+        <div class="focus-buttons">
+          <button class="button focus-start" id="focus-start">Start Focus</button>
+          <button class="button focus-stop" id="focus-stop" disabled>Stop</button>
+        </div>
+        <p class="focus-status" id="focus-status" role="status" aria-live="polite"></p>
+      </div>
+    </div>
+
+    <section class="section" id="top-sites-section">
+      <h2 class="section-title">Your top sites</h2>
+      <div class="tiles" id="top-sites"></div>
+    </section>
+
+    <section class="section" id="recent-section">
+      <h2 class="section-title">Recently visited</h2>
+      <div class="list" id="recent"></div>
+    </section>
+  </div>
+
+  <script src="assets/common.js"></script>
+  <script src="assets/start.js"></script>
+</body>
+</html>
