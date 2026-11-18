@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'self'; style-src 'self' 'unsafe-inline'; img-src 'self' https: data:; font-src 'self'; connect-src 'self';">
+  <title>Store — Swiftly</title>
+  <link rel="stylesheet" href="assets/pages.css">
+</head>
+<body>
+  <div class="page wide">
+    <div class="page-header">
+      <div>
+        <h1 class="page-title">Swiftly Store</h1>
+        <p class="page-subtitle">Themes and extensions for your browser</p>
+      </div>
+      <div class="toolbar-row">
+        <span class="store-balance" id="balance">0 searches</span>
+      </div>
+    </div>
+
+    <section class="section" style="margin-top:0;">
+      <h2 class="section-title">Themes</h2>
+      <p class="store-intro">Buy themes with searches you've performed in Swiftly. Each search earns one credit.</p>
+      <div class="theme-grid" id="themes"></div>
+    </section>
+
+    <section class="section">
+      <h2 class="section-title">Extensions</h2>
+      <p class="store-intro">Install add-ons to extend Swiftly. Built-in extensions cannot be removed.</p>
+      <div class="list" id="extensions"></div>
+    </section>
+  </div>
+
+  <script src="assets/common.js"></script>
+  <script src="assets/store.js"></script>
+</body>
+</html>

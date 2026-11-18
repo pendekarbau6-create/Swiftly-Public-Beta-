@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'self'; style-src 'self' 'unsafe-inline'; img-src 'self' data:; font-src 'self'; connect-src 'self';">
+  <title>Account — Swiftly</title>
+  <link rel="stylesheet" href="assets/pages.css">
+</head>
+<body>
+  <main class="page account-page">
+    <button class="account-back" id="back-home" type="button">← <span>Swiftly home</span></button>
+
+    <section class="account-card" aria-labelledby="account-title">
+      <div class="account-mark" aria-hidden="true">
+        <img src="assets/logo.jpg" alt="" class="brand-logo">
+      </div>
+      <h1 class="account-title" id="account-title">Sign in to Swiftly</h1>
+      <p class="account-subtitle" id="account-subtitle">Use your profile on this computer.</p>
+
+      <div id="auth-panel">
+        <div class="account-modes" role="group" aria-label="Account action">
+          <button class="account-mode active" id="mode-signin" type="button" aria-pressed="true">Sign in</button>
+          <button class="account-mode" id="mode-signup" type="button" aria-pressed="false">Create account</button>
+        </div>
+
+        <form class="account-form" id="sign-in-form">
+          <div class="account-field">
+            <label for="login-email">Email address</label>
+            <input class="input" id="login-email" name="email" type="email" maxlength="254" autocomplete="username" required>
+          </div>
+          <div class="account-field">
+            <label for="login-password">Password</label>
+            <input class="input" id="login-password" name="password" type="password" maxlength="128" autocomplete="current-password" required>
+          </div>
+          <button class="button primary account-submit" type="submit">Sign in</button>
+        </form>
+
+        <form class="account-form" id="sign-up-form" hidden>
+          <div class="account-field">
+            <label for="signup-name">Name</label>
+            <input class="input" id="signup-name" name="name" type="text" maxlength="80" autocomplete="name" required>
+          </div>
+          <div class="account-field">
+            <label for="signup-email">Email address</label>
+            <input class="input" id="signup-email" name="email" type="email" maxlength="254" autocomplete="email" required>
+          </div>
+          <div class="account-field">
+            <label for="signup-password">Password</label>
+            <input class="input" id="signup-password" name="password" type="password" minlength="10" maxlength="128" autocomplete="new-password" required>
+            <span class="account-help">Use at least 10 characters.</span>
+          </div>
+          <div class="account-field">
+            <label for="signup-confirm-password">Confirm password</label>
+            <input class="input" id="signup-confirm-password" name="confirmPassword" type="password" minlength="10" maxlength="128" autocomplete="new-password" required>
+          </div>
+          <button class="button primary account-submit" type="submit">Create account</button>
+        </form>
+
+        <p class="account-message" id="account-message" role="status" aria-live="polite"></p>
+        <p class="account-local-note">Your profile is saved on this computer and doesn’t sync to other devices.</p>
+      </div>
+
+      <div class="account-profile" id="account-profile" hidden>
+        <div class="account-profile-avatar" id="profile-avatar" aria-hidden="true"></div>
+        <div class="account-profile-name" id="profile-name"></div>
+        <div class="account-profile-email" id="profile-email"></div>
+        <p class="account-local-note">You’re signed in on this computer. Your browsing history and bookmarks stay in Swiftly’s local profile.</p>
+        <button class="button account-submit" id="sign-out" type="button">Sign out</button>
+        <button class="account-home-link" id="profile-home" type="button">Back to Swiftly</button>
+      </div>
+    </section>
+  </main>
+
+  <script src="assets/common.js"></script>
+  <script src="assets/account.js"></script>
+</body>
+</html>
