@@ -8,6 +8,8 @@
     "start": "electron .",
     "dev": "electron . --dev",
     "search": "node src/search/standalone.js",
+    "search:web": "node search-engine/server.js",
+    "search:crawl": "node search-engine/crawl.js",
     "test": "node --test test"
   },
   "keywords": [
